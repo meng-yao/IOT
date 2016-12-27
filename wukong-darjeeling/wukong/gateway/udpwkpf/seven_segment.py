@@ -28,92 +28,121 @@ if __name__ == "__main__":
             self.gpio_E = pin_mode(Pin_E, PIN_TYPE_DIGITAL, PIN_MODE_OUTPUT)
             self.gpio_F = pin_mode(Pin_F, PIN_TYPE_DIGITAL, PIN_MODE_OUTPUT)
             self.gpio_G = pin_mode(Pin_G, PIN_TYPE_DIGITAL, PIN_MODE_OUTPUT)
+            self.counter = 0
+            self.value = 0 
         def update(self,obj,pID=None,val=None):
             try:
-                if pID == 0:
-                    if val == 0:
-                        digital_write(self.gpio_A,0)
-                        digital_write(self.gpio_B,0)
-                        digital_write(self.gpio_B,0)
-                        digital_write(self.gpio_C,0)
-                        digital_write(self.gpio_D,0)
-                        digital_write(self.gpio_E,0)
-                        digital_write(self.gpio_F,0)
-                        digital_write(self.gpio_G,1)
-                    elif val == 1:
-                        digital_write(self.gpio_A,0)
-                        digital_write(self.gpio_B,0)
-                        digital_write(self.gpio_C,1)
-                        digital_write(self.gpio_D,1)
-                        digital_write(self.gpio_E,1)
-                        digital_write(self.gpio_F,1)
-                        digital_write(self.gpio_G,1)
-                        print "Light Actuator On"
-                    elif val == 2:
-                        digital_write(self.gpio_A,0)
-                        digital_write(self.gpio_B,1)
-                        digital_write(self.gpio_C,0)
-                        digital_write(self.gpio_D,0)
-                        digital_write(self.gpio_E,1)
-                        digital_write(self.gpio_F,0)
-                        digital_write(self.gpio_G,0)
-                    elif val == 3:
-                        digital_write(self.gpio_A,0)
-                        digital_write(self.gpio_B,0)
-                        digital_write(self.gpio_C,0)
-                        digital_write(self.gpio_D,1)
-                        digital_write(self.gpio_E,1)
-                        digital_write(self.gpio_F,0)
-                        digital_write(self.gpio_G,0)
-                    elif val == 4:
-                        digital_write(self.gpio_A,0)
-                        digital_write(self.gpio_B,0)
-                        digital_write(self.gpio_C,1)
-                        digital_write(self.gpio_D,1)
-                        digital_write(self.gpio_E,0)
-                        digital_write(self.gpio_F,1)
-                        digital_write(self.gpio_G,0)
-                    elif val == 5:
-                        digital_write(self.gpio_A,1)
-                        digital_write(self.gpio_B,0)
-                        digital_write(self.gpio_C,0)
-                        digital_write(self.gpio_D,1)
-                        digital_write(self.gpio_E,0)
-                        digital_write(self.gpio_F,0)
-                        digital_write(self.gpio_G,0)
-                    elif val == 6:
-                        digital_write(self.gpio_A,1)
-                        digital_write(self.gpio_B,0)
-                        digital_write(self.gpio_C,0)
-                        digital_write(self.gpio_D,0)
-                        digital_write(self.gpio_E,0)
-                        digital_write(self.gpio_F,0)
-                        digital_write(self.gpio_G,0)
-                    elif val == 7:
-                        digital_write(self.gpio_A,0)
-                        digital_write(self.gpio_B,0)
-                        digital_write(self.gpio_C,1)
-                        digital_write(self.gpio_D,1)
-                        digital_write(self.gpio_E,1)
-                        digital_write(self.gpio_F,1)
-                        digital_write(self.gpio_G,0)
-                    elif val == 9:
-                        digital_write(self.gpio_A,0)
-                        digital_write(self.gpio_B,0)
-                        digital_write(self.gpio_C,1)
-                        digital_write(self.gpio_D,1)
-                        digital_write(self.gpio_E,0)
-                        digital_write(self.gpio_F,0)
-                        digital_write(self.gpio_G,0)
-                    else:
-                        digital_write(self.gpio_A,0)
-                        digital_write(self.gpio_B,0)
-                        digital_write(self.gpio_C,0)
-                        digital_write(self.gpio_D,0)
-                        digital_write(self.gpio_E,0)
-                        digital_write(self.gpio_F,0)
-                        digital_write(self.gpio_G,0)
-                        print "Light Actuator Off"
+                self.counter += 1
+                if pID >=0 &&ïpID<=3:
+                    val = obj.setProperty(pID,val); 
+                if self.counter % 4 == 1
+                    digital_write(self.gpio_1,1)
+                    digital_write(self.gpio_2,0)
+                    digital_write(self.gpio_3,0)
+                    digital_write(self.gpio_4,0)
+                    self.value = obj.getProperty(0);
+                elif self.counter % 4 == 2
+                    digital_write(self.gpio_1,0)
+                    digital_write(self.gpio_2,1)
+                    digital_write(self.gpio_3,0)
+                    digital_write(self.gpio_4,0)
+                    self.value = obj.getProperty(1);
+                elif self.counter % 4 == 3
+                    digital_write(self.gpio_1,0)
+                    digital_write(self.gpio_2,0)
+                    digital_write(self.gpio_3,1)
+                    digital_write(self.gpio_4,0)
+                    self.value = obj.getProperty(2);
+                elif self.counter % 4 == 0
+                    digital_write(self.gpio_1,0)
+                    digital_write(self.gpio_2,0)
+                    digital_write(self.gpio_3,0)
+                    digital_write(self.gpio_4,1)
+                    self.value = obj.getProperty(3);
+
+                if self.value == 0:
+                    digital_write(self.gpio_A,0)
+                    digital_write(self.gpio_B,0)
+                    digital_write(self.gpio_B,0)
+                    digital_write(self.gpio_C,0)
+                    digital_write(self.gpio_D,0)
+                    digital_write(self.gpio_E,0)
+                    digital_write(self.gpio_F,0)
+                    digital_write(self.gpio_G,1)
+                elif self.value == 1:
+                    digital_write(self.gpio_A,0)
+                    digital_write(self.gpio_B,0)
+                    digital_write(self.gpio_C,1)
+                    digital_write(self.gpio_D,1)
+                    digital_write(self.gpio_E,1)
+                    digital_write(self.gpio_F,1)
+                    digital_write(self.gpio_G,1)
+                    print "Light Actuator On"
+                elif self.value == 2:
+                    digital_write(self.gpio_A,0)
+                    digital_write(self.gpio_B,1)
+                    digital_write(self.gpio_C,0)
+                    digital_write(self.gpio_D,0)
+                    digital_write(self.gpio_E,1)
+                    digital_write(self.gpio_F,0)
+                    digital_write(self.gpio_G,0)
+                elif self.value == 3:
+                    digital_write(self.gpio_A,0)
+                    digital_write(self.gpio_B,0)
+                    digital_write(self.gpio_C,0)
+                    digital_write(self.gpio_D,1)
+                    digital_write(self.gpio_E,1)
+                    digital_write(self.gpio_F,0)
+                    digital_write(self.gpio_G,0)
+                elif self.value == 4:
+                    digital_write(self.gpio_A,0)
+                    digital_write(self.gpio_B,0)
+                    digital_write(self.gpio_C,1)
+                    digital_write(self.gpio_D,1)
+                    digital_write(self.gpio_E,0)
+                    digital_write(self.gpio_F,1)
+                    digital_write(self.gpio_G,0)
+                elif self.value == 5:
+                    digital_write(self.gpio_A,1)
+                    digital_write(self.gpio_B,0)
+                    digital_write(self.gpio_C,0)
+                    digital_write(self.gpio_D,1)
+                    digital_write(self.gpio_E,0)
+                    digital_write(self.gpio_F,0)
+                    digital_write(self.gpio_G,0)
+                elif self.value == 6:
+                    digital_write(self.gpio_A,1)
+                    digital_write(self.gpio_B,0)
+                    digital_write(self.gpio_C,0)
+                    digital_write(self.gpio_D,0)
+                    digital_write(self.gpio_E,0)
+                    digital_write(self.gpio_F,0)
+                    digital_write(self.gpio_G,0)
+                elif self.value == 7:
+                    digital_write(self.gpio_A,0)
+                    digital_write(self.gpio_B,0)
+                    digital_write(self.gpio_C,1)
+                    digital_write(self.gpio_D,1)
+                    digital_write(self.gpio_E,1)
+                    digital_write(self.gpio_F,1)
+                    digital_write(self.gpio_G,0)
+                elif self.value == 9:
+                    digital_write(self.gpio_A,0)
+                    digital_write(self.gpio_B,0)
+                    digital_write(self.gpio_C,1)
+                    digital_write(self.gpio_D,1)
+                    digital_write(self.gpio_E,0)
+                    digital_write(self.gpio_F,0)
+                    digital_write(self.gpio_G,0)
+                else:
+                    digital_write(self.gpio_A,0)
+                    digital_write(self.gpio_B,0)
+                    digital_write(self.gpio_C,0)
+                    digital_write(self.gpio_D,0)
+                    digital_write(self.gpio_E,0)
+                    digital_write(self.gpio_F,0)
+                    digital_write(self.gpio_G,0)
+                    print "Light Actuator Off"
 
             except IOError:
                 print ("Error")

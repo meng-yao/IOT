@@ -522,7 +522,10 @@
         <property name="refresh_rate" access="readwrite" datatype="refresh_rate" default="1"  />
     </WuClass>
     <WuClass name="Seven_Segment" id="2041" virtual="false" type="hard">
-        <property name="value" access="writeonly" datatype="short" default="0" />
+        <property name="value1" access="writeonly" datatype="short" default="0" />
+        <property name="value2" access="writeonly" datatype="short" default="0" />
+        <property name="value3" access="writeonly" datatype="short" default="0" />
+        <property name="value4" access="writeonly" datatype="short" default="0" />
         <property name="refresh_rate" access="readwrite" datatype="refresh_rate" default="1"  />
     </WuClass>
 
