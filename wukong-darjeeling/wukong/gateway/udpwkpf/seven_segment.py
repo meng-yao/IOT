@@ -1,5 +1,6 @@
 from udpwkpf import WuClass, Device
 import sys
+import time
 from udpwkpf_io_interface import *
 from twisted.internet import reactor
 
@@ -36,6 +37,13 @@ if __name__ == "__main__":
         def update(self,obj,pID=None,val=None):
             try:
                 self.counter += 1
+                digital_write(self.gpio_A,1)
+                digital_write(self.gpio_B,1)
+                digital_write(self.gpio_C,1)
+                digital_write(self.gpio_D,1)
+                digital_write(self.gpio_E,1)
+                digital_write(self.gpio_F,1)
+                digital_write(self.gpio_G,1)
                 if pID ==0:
                     val = obj.setProperty(pID,val) 
                 elif pID ==1:
@@ -44,7 +52,6 @@ if __name__ == "__main__":
                     val = obj.setProperty(pID,val) 
                 elif pID ==3:
                     val = obj.setProperty(pID,val) 
-                print self.counter%4
                 if self.counter % 4 == 1:
                     digital_write(self.gpio_1,1)
                     digital_write(self.gpio_2,0)
@@ -69,26 +76,50 @@ if __name__ == "__main__":
                     digital_write(self.gpio_3,0)
                     digital_write(self.gpio_4,1)
                     self.value = obj.getProperty(3);
-
+                
+                print self.value
                 if self.value == 0:
                     digital_write(self.gpio_A,0)
-                    digital_write(self.gpio_B,0)
                     digital_write(self.gpio_B,0)
                     digital_write(self.gpio_C,0)
                     digital_write(self.gpio_D,0)
                     digital_write(self.gpio_E,0)
                     digital_write(self.gpio_F,0)
                     digital_write(self.gpio_G,1)
+
                 elif self.value == 1:
-                    digital_write(self.gpio_A,0)
+                    digital_write(self.gpio_A,1)
                     digital_write(self.gpio_B,0)
-                    digital_write(self.gpio_C,1)
+                    digital_write(self.gpio_C,0)
                     digital_write(self.gpio_D,1)
                     digital_write(self.gpio_E,1)
                     digital_write(self.gpio_F,1)
                     digital_write(self.gpio_G,1)
-                    print "Light Actuator On"
                 elif self.value == 2:
+                    digital_write(self.gpio_A,0)
+                    digital_write(self.gpio_B,0)
+                    digital_write(self.gpio_C,1)
+                    digital_write(self.gpio_D,0)
+                    digital_write(self.gpio_E,0)
+                    digital_write(self.gpio_F,1)
+                    digital_write(self.gpio_G,0)
+                elif self.value == 3:
+                    digital_write(self.gpio_A,0)
+                    digital_write(self.gpio_B,0)
+                    digital_write(self.gpio_C,0)
+                    digital_write(self.gpio_D,0)
+                    digital_write(self.gpio_E,1)
+                    digital_write(self.gpio_F,1)
+                    digital_write(self.gpio_G,0)
+                elif self.value == 4:
+                    digital_write(self.gpio_A,1)
+                    digital_write(self.gpio_B,0)
+                    digital_write(self.gpio_C,0)
+                    digital_write(self.gpio_D,1)
+                    digital_write(self.gpio_E,1)
+                    digital_write(self.gpio_F,0)
+                    digital_write(self.gpio_G,0)
+                elif self.value == 5:
                     digital_write(self.gpio_A,0)
                     digital_write(self.gpio_B,1)
                     digital_write(self.gpio_C,0)
@@ -96,33 +127,9 @@ if __name__ == "__main__":
                     digital_write(self.gpio_E,1)
                     digital_write(self.gpio_F,0)
                     digital_write(self.gpio_G,0)
-                elif self.value == 3:
-                    digital_write(self.gpio_A,0)
-                    digital_write(self.gpio_B,0)
-                    digital_write(self.gpio_C,0)
-                    digital_write(self.gpio_D,1)
-                    digital_write(self.gpio_E,1)
-                    digital_write(self.gpio_F,0)
-                    digital_write(self.gpio_G,0)
-                elif self.value == 4:
-                    digital_write(self.gpio_A,0)
-                    digital_write(self.gpio_B,0)
-                    digital_write(self.gpio_C,1)
-                    digital_write(self.gpio_D,1)
-                    digital_write(self.gpio_E,0)
-                    digital_write(self.gpio_F,1)
-                    digital_write(self.gpio_G,0)
-                elif self.value == 5:
-                    digital_write(self.gpio_A,1)
-                    digital_write(self.gpio_B,0)
-                    digital_write(self.gpio_C,0)
-                    digital_write(self.gpio_D,1)
-                    digital_write(self.gpio_E,0)
-                    digital_write(self.gpio_F,0)
-                    digital_write(self.gpio_G,0)
                 elif self.value == 6:
-                    digital_write(self.gpio_A,1)
-                    digital_write(self.gpio_B,0)
+                    digital_write(self.gpio_A,0)
+                    digital_write(self.gpio_B,1)
                     digital_write(self.gpio_C,0)
                     digital_write(self.gpio_D,0)
                     digital_write(self.gpio_E,0)
@@ -131,17 +138,17 @@ if __name__ == "__main__":
                 elif self.value == 7:
                     digital_write(self.gpio_A,0)
                     digital_write(self.gpio_B,0)
-                    digital_write(self.gpio_C,1)
+                    digital_write(self.gpio_C,0)
                     digital_write(self.gpio_D,1)
                     digital_write(self.gpio_E,1)
                     digital_write(self.gpio_F,1)
-                    digital_write(self.gpio_G,0)
+                    digital_write(self.gpio_G,1)
                 elif self.value == 9:
                     digital_write(self.gpio_A,0)
                     digital_write(self.gpio_B,0)
-                    digital_write(self.gpio_C,1)
-                    digital_write(self.gpio_D,1)
-                    digital_write(self.gpio_E,0)
+                    digital_write(self.gpio_C,0)
+                    digital_write(self.gpio_D,0)
+                    digital_write(self.gpio_E,1)
                     digital_write(self.gpio_F,0)
                     digital_write(self.gpio_G,0)
                 else:
