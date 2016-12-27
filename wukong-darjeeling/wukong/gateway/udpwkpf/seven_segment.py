@@ -4,6 +4,9 @@ from udpwkpf_io_interface import *
 from twisted.internet import reactor
 
 digit_1 = 2
+digit_2 = 3
+digit_3 = 4
+digit_4 = 5
 Pin_A = 6
 Pin_B = 7
 Pin_C = 8
@@ -11,7 +14,6 @@ Pin_D = 9
 Pin_E = 10
 Pin_F = 11
 Pin_G = 12
-Pin_H = 13
 
 if __name__ == "__main__":
     class Seven_Segment(WuClass):
@@ -26,15 +28,25 @@ if __name__ == "__main__":
             self.gpio_E = pin_mode(Pin_E, PIN_TYPE_DIGITAL, PIN_MODE_OUTPUT)
             self.gpio_F = pin_mode(Pin_F, PIN_TYPE_DIGITAL, PIN_MODE_OUTPUT)
             self.gpio_G = pin_mode(Pin_G, PIN_TYPE_DIGITAL, PIN_MODE_OUTPUT)
-            self.gpio_H = pin_mode(Pin_H, PIN_TYPE_DIGITAL, PIN_MODE_OUTPUT)
-            digital_write(self.gpio_B,1)
         def update(self,obj,pID=None,val=None):
             try:
-                digital_write(self.gpio_1,1)
                 if pID == 0:
                     if val == 0:
-                        digital_write(self.gpio_A,1)
+                        digital_write(self.gpio_G,1)
+                    elif val == 1:
+                        digital_write(self.gpio_C,1)
+                        digital_write(self.gpio_D,1)
+                        digital_write(self.gpio_E,1)
+                        digital_write(self.gpio_F,1)
+                        digital_write(self.gpio_G,1)
                         print "Light Actuator On"
+                    elif val == 2:
+                        digital_write(self.gpio_B,1)
+                        digital_write(self.gpio_E,1)
+                    elif val == 3:
+                        digital_write(self.gpio_D,1)
+                        digital_write(self.gpio_E,1)
+
                     else:
                         digital_write(self.gpio_A,1)
                         print "Light Actuator Off"
