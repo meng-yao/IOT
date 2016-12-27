@@ -526,7 +526,7 @@
         <property name="value2" access="writeonly" datatype="short" default="0" />
         <property name="value3" access="writeonly" datatype="short" default="0" />
         <property name="value4" access="writeonly" datatype="short" default="0" />
-        <property name="refresh_rate" access="readwrite" datatype="refresh_rate" default="1"  />
+        <property name="refresh_rate" access="readwrite" datatype="refresh_rate" default="6000"  />
     </WuClass>
 
 

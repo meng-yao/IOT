@@ -21,6 +21,9 @@ if __name__ == "__main__":
             WuClass.__init__(self)
             self.loadClass('Seven_Segment')
             self.gpio_1 = pin_mode(digit_1, PIN_TYPE_DIGITAL, PIN_MODE_OUTPUT)
+            self.gpio_2 = pin_mode(digit_2, PIN_TYPE_DIGITAL, PIN_MODE_OUTPUT)
+            self.gpio_3 = pin_mode(digit_3, PIN_TYPE_DIGITAL, PIN_MODE_OUTPUT)
+            self.gpio_4 = pin_mode(digit_4, PIN_TYPE_DIGITAL, PIN_MODE_OUTPUT)
             self.gpio_A = pin_mode(Pin_A, PIN_TYPE_DIGITAL, PIN_MODE_OUTPUT)
             self.gpio_B = pin_mode(Pin_B, PIN_TYPE_DIGITAL, PIN_MODE_OUTPUT)
             self.gpio_C = pin_mode(Pin_C, PIN_TYPE_DIGITAL, PIN_MODE_OUTPUT)
@@ -33,27 +36,34 @@ if __name__ == "__main__":
         def update(self,obj,pID=None,val=None):
             try:
                 self.counter += 1
-                if pID >=0 &&ïpID<=3:
-                    val = obj.setProperty(pID,val); 
-                if self.counter % 4 == 1
+                if pID ==0:
+                    val = obj.setProperty(pID,val) 
+                elif pID ==1:
+                    val = obj.setProperty(pID,val) 
+                elif pID ==2:
+                    val = obj.setProperty(pID,val) 
+                elif pID ==3:
+                    val = obj.setProperty(pID,val) 
+                print self.counter%4
+                if self.counter % 4 == 1:
                     digital_write(self.gpio_1,1)
                     digital_write(self.gpio_2,0)
                     digital_write(self.gpio_3,0)
                     digital_write(self.gpio_4,0)
                     self.value = obj.getProperty(0);
-                elif self.counter % 4 == 2
+                elif self.counter % 4 == 2:
                     digital_write(self.gpio_1,0)
                     digital_write(self.gpio_2,1)
                     digital_write(self.gpio_3,0)
                     digital_write(self.gpio_4,0)
                     self.value = obj.getProperty(1);
-                elif self.counter % 4 == 3
+                elif self.counter % 4 == 3:
                     digital_write(self.gpio_1,0)
                     digital_write(self.gpio_2,0)
                     digital_write(self.gpio_3,1)
                     digital_write(self.gpio_4,0)
                     self.value = obj.getProperty(2);
-                elif self.counter % 4 == 0
+                elif self.counter % 4 == 0:
                     digital_write(self.gpio_1,0)
                     digital_write(self.gpio_2,0)
                     digital_write(self.gpio_3,0)
