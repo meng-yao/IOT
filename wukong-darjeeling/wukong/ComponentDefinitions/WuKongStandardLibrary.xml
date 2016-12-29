@@ -229,8 +229,9 @@
         <property name="refresh_rate" access="readwrite" datatype="refresh_rate" default="1000"  />
     </WuClass>
     <WuClass name="Thermal_Sensor" id="1020" virtual="false" type="hard">
-        <property name="people_num" access="readwrite" datatype="short" default="0"  />
-        <property name="refresh_rate" access="readwrite" datatype="refresh_rate" default="100" />
+	<property name="upstair_people_num" access="readonly" datatype="short" default="0"  />
+	<property name="downstair_people_num" access="readonly" datatype="short" default="0"  />
+        <property name="refresh_rate" access="readwrite" datatype="refresh_rate" default="500" />
     </WuClass>
 
 
