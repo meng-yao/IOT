@@ -1,5 +1,5 @@
 ##
-## create the wuClassCategoaryTableRaw in static/js/datamodel.js
+### create the wuClassCategoaryTableRaw in static/js/datamodel.js
 ##
 data = """
 Software	Logic	Threshold
