@@ -1,5 +1,5 @@
 <WuKong>
-    <WuClass name="PIR_Sensor" appCanCreateInstances="false">
+    <WuClass name="Seven_Segment" appCanCreateInstances="false">
         <CreateInstance />
     </WuClass>
 </WuKong>

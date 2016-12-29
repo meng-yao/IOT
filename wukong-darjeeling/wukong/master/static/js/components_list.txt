@@ -9,6 +9,7 @@ __comp__condition_selector_boolean.js
 __comp__condition_selector_short.js
 __comp__math_op.js
 __comp__virtual_slider.js
+__comp__fire_agent.js
 __comp__server.js
 __comp__multiplexer.js
 __comp__equal.js
@@ -32,6 +33,10 @@ __comp__temperature_sensor.js
 __comp__sound_sensor.js
 __comp__touch_sensor.js
 __comp__makey_gesture.js
+__comp__counter.js
+__comp__smoke_sensor.js
+__comp__pm25.js
+__comp__thermal_sensor.js
 __comp__binary_testsensor.js
 __comp__integer_testsensor.js
 __comp__user.js
@@ -44,6 +49,7 @@ __comp__cabinet.js
 __comp__phone.js
 __comp__realsense.js
 __comp__eegserver.js
+__comp__obd2.js
 __comp__light_actuator.js
 __comp__led.js
 __comp__fan.js
@@ -80,6 +86,11 @@ __comp__debug_trigger.js
 __comp__hangoutcontrol.js
 __comp__videocontrol.js
 __comp__mosfet_led.js
+__comp__intel_sound.js
+__comp__pattern.js
+__comp__aws_daemon.js
+__comp__strip_led.js
+__comp__seven_segment.js
 __comp__icsdemofloorlampprclass.js
 __comp__icsdemobloomprclass.js
 __comp__icsdemogoprclass.js
@@ -107,3 +118,6 @@ __comp__url.js
 __comp__uislider.js
 __comp__uiscene.js
 __comp__array_test.js
+__comp__string_test.js
+__comp__noderedsignalsender.js
+__comp__noderedsignalreceiver.js
