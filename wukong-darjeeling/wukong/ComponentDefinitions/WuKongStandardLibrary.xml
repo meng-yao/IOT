@@ -227,7 +227,11 @@
     <WuClass name="PM25" id="1019" virtual="false" type="hard">
         <property name="value" access="readonly" datatype="short"  />
         <property name="refresh_rate" access="readwrite" datatype="refresh_rate" default="1000"  />
-</WuClass>
+    </WuClass>
+    <WuClass name="Thermal_Sensor" id="1020" virtual="false" type="hard">
+        <property name="people_num" access="readwrite" datatype="short" default="0"  />
+        <property name="refresh_rate" access="readwrite" datatype="refresh_rate" default="100" />
+    </WuClass>
 
 
 
