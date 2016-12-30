@@ -5,7 +5,7 @@ from twisted.internet import reactor
 
 #Hello world! Test.
 
-Light_Actuator_Pin = 7
+Light_Actuator_Pin = 13
 
 if __name__ == "__main__":
     class Light_Actuator(WuClass):
