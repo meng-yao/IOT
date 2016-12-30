@@ -236,6 +236,8 @@
     <WuClass name="Thermal_Sensor_Elevator" id="1021" virtual="false" type="hard">
         <property name="total_people_ones" access="readwrite" datatype="short" default="0"  />
         <property name="total_people_tens" access="readwrite" datatype="short" default="0"  />
+        <property name="is_full" access="readwrite" datatype="boolean" default="false"  />
+
         <property name="refresh_rate" access="readwrite" datatype="refresh_rate" default="500" />
     </WuClass>
 

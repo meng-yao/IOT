@@ -48,6 +48,8 @@ if __name__ == "__main__":
                     total_Num_ones = total_Num % 10
                     obj.setProperty(0,total_Num_ones)
                     obj.setProperty(1,total_Num_tens)
+                    obj.setProperty(2,total_Num>=4)
+                   
                 except IOError:
                     print "Error"
         
