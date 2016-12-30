@@ -233,11 +233,6 @@
 	    <property name="downstair_people_num" access="readwrite" datatype="short" default="0"  />
         <property name="refresh_rate" access="readwrite" datatype="refresh_rate" default="500" />
     </WuClass>
-    <WuClass name="Thermal_Sensor_Elevator" id="1020" virtual="false" type="hard">
-	    <property name="total_people_ones" access="readwrite" datatype="short" default="0"  />
-	    <property name="total_people_tens" access="readwrite" datatype="short" default="0"  />
-        <property name="refresh_rate" access="readwrite" datatype="refresh_rate" default="500" />
-    </WuClass>
 
 
 

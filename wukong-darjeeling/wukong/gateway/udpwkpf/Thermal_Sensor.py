@@ -50,6 +50,8 @@ if __name__ == "__main__":
                         print temp[y*4],temp[y*4+1],temp[y*4+2],temp[y*4+3]
                     obj.setProperty(0,up_Num)
                     obj.setProperty(1,down_Num)
+                    obj.setProperty(2,500);
+
                 except IOError:
                     print "Error"
         
