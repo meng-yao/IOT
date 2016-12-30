@@ -11,6 +11,8 @@ void wuclass_seven_segment_update(wuobject_t *wuobject) {
     int val4;
     int tmp;
     counter += 1;
+    if(counter>1000)
+        counter=0;
     wkpf_internal_read_property_int16(wuobject, WKPF_PROPERTY_SEVEN_SEGMENT_VALUE1, &val1);
     wkpf_internal_read_property_int16(wuobject, WKPF_PROPERTY_SEVEN_SEGMENT_VALUE2, &val2);
     wkpf_internal_read_property_int16(wuobject, WKPF_PROPERTY_SEVEN_SEGMENT_VALUE3, &val3);
