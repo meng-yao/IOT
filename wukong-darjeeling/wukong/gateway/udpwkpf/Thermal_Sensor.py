@@ -40,7 +40,7 @@ if __name__ == "__main__":
                     for x in range (0, 16):
                         if temp[x] > 230:
                             temp[x] = 1
-                            if(x<8):
+                            if(x%4 == 2 || x%4 == 3):
                                 down_Num+=1
                             else:
                                 up_Num+=1
